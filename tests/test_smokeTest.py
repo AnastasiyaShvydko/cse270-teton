@@ -53,23 +53,6 @@ class TestSmokeTest():
     assert self.driver.find_element(By.CSS_SELECTOR, ".header-title > h2").text == "Chamber of Commerce"
     assert self.driver.title == "Teton Idaho CoC"
   
-  def test_navigatetothehomepage2(self):
-    self.driver.get("http://127.0.0.1:62007/teton/1.6/index.html")
-    self.driver.set_window_size(1147, 642)
-    elements = self.driver.find_elements(By.LINK_TEXT, "Home")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.LINK_TEXT, "Join")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.LINK_TEXT, "Directory")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.LINK_TEXT, "Admin")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1 > p:nth-child(4)")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2")
-    assert len(elements) > 0
-    self.driver.find_element(By.LINK_TEXT, "Join Us!").click()
-  
   def test_navigatetothejoinpage(self):
     self.driver.get("http://127.0.0.1:62007/teton/1.6/index.html")
     self.driver.set_window_size(1147, 642)
@@ -86,4 +69,21 @@ class TestSmokeTest():
     self.driver.find_element(By.NAME, "submit").click()
     elements = self.driver.find_elements(By.NAME, "email")
     assert len(elements) > 0
+  
+  def test_navigatetothehomepage2(self):
+    self.driver.get("http://127.0.0.1:62007/teton/1.6/index.html")
+    self.driver.set_window_size(1147, 642)
+    elements = self.driver.find_elements(By.LINK_TEXT, "Home")
+    assert len(elements) > 0
+    elements = self.driver.find_elements(By.LINK_TEXT, "Join")
+    assert len(elements) > 0
+    elements = self.driver.find_elements(By.LINK_TEXT, "Directory")
+    assert len(elements) > 0
+    elements = self.driver.find_elements(By.LINK_TEXT, "Admin")
+    assert len(elements) > 0
+    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1")
+    assert len(elements) > 0
+    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2 > .centered-image")
+    assert len(elements) > 0
+    self.driver.find_element(By.LINK_TEXT, "Join").click()
   
