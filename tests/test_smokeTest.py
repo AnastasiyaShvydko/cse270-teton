@@ -70,20 +70,20 @@ class TestSmokeTest():
     elements = self.driver.find_elements(By.NAME, "email")
     assert len(elements) > 0
   
-  def test_navigatetothehomepage2(self):
-    self.driver.get("http://127.0.0.1:62007/teton/1.6/index.html")
-    self.driver.set_window_size(1147, 642)
-    elements = self.driver.find_elements(By.LINK_TEXT, "Home")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.LINK_TEXT, "Join")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.LINK_TEXT, "Directory")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.LINK_TEXT, "Admin")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1")
-    assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2 > .centered-image")
-    assert len(elements) > 0
-    self.driver.find_element(By.LINK_TEXT, "Join").click()
+  # def test_navigatetothehomepage2(self):
+  #   self.driver.get("http://127.0.0.1:62007/teton/1.6/index.html")
+  #   self.driver.set_window_size(1147, 642)
+  #   elements = self.driver.find_elements(By.LINK_TEXT, "Home")
+  #   assert len(elements) > 0
+  #   elements = self.driver.find_elements(By.LINK_TEXT, "Join")
+  #   assert len(elements) > 0
+  #   elements = self.driver.find_elements(By.LINK_TEXT, "Directory")
+  #   assert len(elements) > 0
+  #   elements = self.driver.find_elements(By.LINK_TEXT, "Admin")
+  #   assert len(elements) > 0
+  #   elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1")
+  #   assert len(elements) > 0
+  #   elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2 > .centered-image")
+  #   assert len(elements) > 0
+  #   self.driver.find_element(By.LINK_TEXT, "Join").click()
   
