@@ -79,9 +79,9 @@ class TestSmokeTest():
     assert len(elements) > 0
     elements = self.driver.find_elements(By.LINK_TEXT, "Directory")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1 img")
+    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1 > h4")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2 img")
+    elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2 > h4")
     assert len(elements) > 0
     elements = self.driver.find_elements(By.LINK_TEXT, "Admin")
     assert len(elements) > 0
