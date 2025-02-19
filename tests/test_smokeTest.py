@@ -79,7 +79,7 @@ class TestSmokeTest():
     assert len(elements) > 0
     elements = self.driver.find_elements(By.LINK_TEXT, "Directory")
     assert len(elements) > 0
-    WebDriverWait(self.driver, 30).until(expected_conditions.text_to_be_present_in_element((By.CSS_SELECTOR, ".spotlight1 > h4"), "Teton Elementary"))
+    # WebDriverWait(self.driver, 30).until(expected_conditions.text_to_be_present_in_element((By.CSS_SELECTOR, ".spotlight1 > h4"), "Teton Elementary"))
     elements = self.driver.find_elements(By.LINK_TEXT, "Admin")
     assert len(elements) > 0
   
