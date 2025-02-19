@@ -36,19 +36,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest requests pytest-mock selenium requests-mock coverage
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        # Install necessary dependencies for Chrome and ChromeDriver
-        sudo apt update
-        sudo apt install -y wget unzip
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install ./google-chrome-stable_current_amd64.deb
-        # Download and install ChromeDriver
-        CHROME_DRIVER_VERSION=$(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-        wget https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/local/bin/chromedriver
-        sudo chmod +x /usr/local/bin/chromedriver
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -59,7 +46,9 @@ jobs:
       uses: Eun/http-server-action@v1.0.11
       with:
         directory: .
-        port: 5500         
+        port: 62007
+        index-files: |
+          ["index.html", "index.htm"]           
     - name: Run tests
       run: |
         pytest
